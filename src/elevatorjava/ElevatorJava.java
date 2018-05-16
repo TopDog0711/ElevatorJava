@@ -18,10 +18,10 @@ public class ElevatorJava {
         // TODO code application logic here
         
         Thread runThread;
-        Controller cont = new Controller(2,10);
+        Controller cont = new Controller(1,10);
         if(cont.Init())
         {
-           runThread = new Thread(new Controller());
+           runThread = new Thread(cont);
            runThread.start();
            runThread.join();
             
