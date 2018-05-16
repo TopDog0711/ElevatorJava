@@ -14,8 +14,21 @@ public class ElevatorJava {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
+        
+        Thread runThread;
+        Controller cont = new Controller(2,10);
+        if(cont.Init())
+        {
+           runThread = new Thread(new Controller());
+           runThread.start();
+           runThread.join();
+            
+          
+        }
+        
+        
     }
     
 }
